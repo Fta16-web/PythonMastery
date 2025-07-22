@@ -1,0 +1,40 @@
+Working with path and query parameters 
+parameters allow your api to accept input from users making your endpoints dynamic and responsive
+----------------------------------
+Path parameters are parts of the URL that are expected to change.
+create a route to get information about a specific author
+they are variables we provide inside our path 
+pydantic is used to validate data 
+ex:
+@app.get("/authors/{author_id}")
+async def read_author(author_id: int):
+    return {
+        "author_id": author_id,
+        "name": "Ernest Hemingway"
+    }
+----------------------------------
+Query parameters
+adding query parameters to existing end points 
+Query parameters are used to refine or customize the response of an API endpoint.
+They are any function parameter which are not part of path
+ex:http://localhost:8000/blogs/all?page = 2?page_size =10
+   
+They can be included in the URL after a question mark (? ). For instance, /
+books?genre=fiction&year=2010 might return only books that fall under the fiction
+genre released in 2010.
+ex:
+@app.get("/books")
+async def read_books(year: int = None):# year is optional query parameter 
+    if year:
+        return {
+            "year": year,
+            "books": ["Book 1", "Book 2"]
+        }
+    return {"books": ["All Books"]}
+------------------------------------
+you can combine QP and Path parameter
+-----------------------------------
+see 
+Path Parameters: https://fastapi.tiangolo.com/tutorial/path-params/
+Query Parameters: https://fastapi.tiangolo.com/tutorial/query-params/
+--------------------

@@ -1,0 +1,14 @@
+Pydantic models are a powerful feature for data validation and conversion.
+They allow you to define the structure, type, and constraints of the data your application handles,
+both for incoming requests and outgoing responses.
+use Pydantic to ensure that your data conforms to the specified
+schema, providing an automatic layer of safety and clarity.
+https://docs.pydantic.dev/latest/#why-use-pydantic
+We will break the process into the following steps:
+    1.Creating the model
+    2.Defining the request body
+    3.Validating request data (https://docs.pydantic.dev/latest/concepts/fields/)
+    4.Managing response formats
+-----------------------------------------------------
+1.Creating the model
+

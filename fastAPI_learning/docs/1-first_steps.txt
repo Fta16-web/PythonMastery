@@ -1,0 +1,44 @@
+1- install python3 pip
+2- https://github.com/PacktPublishing/FastAPI-Cookbook.git
+3- create __init__.py and main.py
+4- create a virtual envirnment python3 -m venv (nameOfVirtualEnvirnment) ex: ./env/dev or .venv
+5- use activation scripts to activate the .venv (different in OS) ubuntu  source env/dev/bin/activate 
+6- install few extentions to improve your development experience python package from microsoft, Ruff, error lens    
+7- if using pycharm recommended to use pure python over templates 
+8- use a requirements.txt file to list and manage all the external dependencies (like FastAPI, Uvicorn, SQLAlchemy, etc.) 
+   that the project needs to run properly.
+   It ensures that anyone (including you in the future) can install exactly the same libraries with the
+   same versions, avoiding compatibility issues.
+9-  pip install -r requirements.txt
+10- a common approach is to divide your project into several key directories:
+       • /src: This is where your primary application code lives. Inside /src, you might have
+         subdirectories for different modules of your application. For instance, you could have a
+         models directory for your database models, a routes directory for your FastAPI routes,
+         and a services directory for business logic.
+       • /tests: Keeping your tests separate from your application code is a good practice. It makes
+        it easier to manage them and ensures that your production builds don’t include test code.
+       • /docs: Documentation is crucial for any project. Whether it’s API documentation, installation
+         guides, or usage instructions, having a dedicated directory for documentation helps maintain clarity.
+11 - you can install your own scalar-api :pip install scalar-fastapi
+     
+     from fastapi import FastAPI
+      from scalar_fastapi import get_scalar_api_reference
+
+      app = FastAPI()
+
+      @app.get("/")
+      def read_root():
+          return {"Hello": "World"}
+
+      @app.get("/scalar", include_in_schema=False)
+      async def scalar_html():
+          return get_scalar_api_reference(
+              openapi_url=app.openapi_url,
+              title=app.title,
+          )
+
+ useful resouces 
+
+First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/
+Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/#docs-urls
+Concurrency and async / await: https://fastapi.tiangolo.com/async/
