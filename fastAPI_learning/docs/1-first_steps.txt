@@ -42,3 +42,6 @@
 First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/
 Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/#docs-urls
 Concurrency and async / await: https://fastapi.tiangolo.com/async/
+Pydantic: https://docs.pydantic.dev/latest/
+Response Model - Return Type: https://fastapi.tiangolo.com/tutorial/
+response-model/

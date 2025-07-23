@@ -10,5 +10,38 @@ We will break the process into the following steps:
     3.Validating request data (https://docs.pydantic.dev/latest/concepts/fields/)
     4.Managing response formats
 -----------------------------------------------------
-1.Creating the model
+1- Creating the model
+    use Pydantic BaseModel class
+    from pydantic import BaseModel ex:
+    class Book(BaseModel):
+       title: str
+       author: str
+       year: int
+2- Defining the request body
+   Pydantic models are not just for validation. They also serve as the request body.
+   request to the /book endpoint with JSON data, FastAPI
+   automatically parses and validates it against the Book model.
+   If the data is invalid, the user gets an automatic error response.
+
+3- Validating request data
+   Pydantic offers advanced validation features. For instance,
+   you can add regex validations, default
+   values,
+   see https://docs.pydantic.dev/latest/concepts/fields/.
+
+4- Managing response formats
+    FastAPI allows you to define response models explicitly, ensuring that the data returned by your
+    API matches a specific schema. This can be particularly useful for filtering out sensitive data or
+    restructuring the response.
+    The response_model argument takes priority and can be used instead of the type hint to resolve
+    type checker issues that may occur.
+---------------------------------------------------
+Handling errors and exceptions
+   FastAPI provides built-in support for handling exceptions and errors.
+   When an error occurs, FastAPI returns a JSON response containing details about the error,
+   which is very useful for debugging. However, there are situations where you might want to customize these
+   error responses for better user experience or security.
+   Handling Errors: https://fastapi.tiangolo.com/tutorial/handling-errors/
+----------------------------------------------
+
 
