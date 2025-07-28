@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from scalar_fastapi import get_scalar_api_reference
 from router_book import router_book
-from starlette.responses import JSONResponse  # ✅ Fixed import
+from starlette.responses import JSONResponse
 
 app = FastAPI()
 
