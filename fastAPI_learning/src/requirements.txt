@@ -2,3 +2,4 @@ fastapi[all]
 scalar-fastapi
 pymongo
 pydantic[email]
+sqlalchemy

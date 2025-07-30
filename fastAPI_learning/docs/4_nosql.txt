@@ -1,0 +1,15 @@
+1- install docker 
+2- pull mongodb image 
+3-  docker run -d --name mongodb-auth \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD=secret \
+  -p 27017:27017 \
+  mongo
+
+4- | Your Setup       | Correct URI Format                               |
+| ---------------- | ------------------------------------------------ |
+| Auth enabled     | `mongodb://username:password@localhost:27017/`   |
+| Auth + custom db | `mongodb://user:pass@localhost:27017/mydatabase` |
+| No auth          | `mongodb://localhost:27017/`                     |
+
+or just install free version of mongoDB and MongoDB tools

@@ -1,0 +1,15 @@
+1- FastAPI’s compatibility with SQL databases is facilitated through ORMs. The most popular one is
+SQLAlchemy.
+2- pip install sqlalchemy
+3- configure SQLAlchemy so that it can work with FastAPI.
+4- defining your database models a representation of your database tables in Python code
+5- models are typically defined using classes, with each class corresponding to a table in
+   the database, and each attribute of the class corresponding to a column in the table.
+6- To define a model in SQLAlchemy, you need to create a base class that derives from the
+DeclarativeBase class. This Base class maintains a catalog of classes and tables you’ve
+defined and is central to SQLAlchemy’s ORM functionality
+https://docs.sqlalchemy.org/en/13/orm/extensions/declarative/index.html
+7- connect to the database and create
+these tables. SQLAlchemy uses a connection string to define the details of the database it needs
+to connect to.The format of this connection string varies depending on the database system
+you are using.SQLite database might look like this:DATABASE_URL = "sqlite:///./test.db"
